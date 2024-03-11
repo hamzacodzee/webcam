@@ -27,23 +27,23 @@ const WebCam = () => {
 
   return (
     <div>
+      {!image && (
+        <>
+          <Webcam
+            audio={false}
+            ref={webcamRef}
+            screenshotFormat="image/jpeg"
+            videoConstraints={videoConstraints}
+          />
 
-      <>
-        <Webcam
-          audio={false}
-          ref={webcamRef}
-          screenshotFormat="image/jpeg"
-          videoConstraints={videoConstraints}
-        />
-
-        <button onClick={capture}>Capture photo</button>
-        <button onClick={() => setChangeCameraMode(!changeCameraMode)}>
-          Change Mode
-        </button>
-      </>
-
+          <button onClick={capture}>Capture photo</button>
+          <button onClick={() => setChangeCameraMode(!changeCameraMode)}>
+            Change Mode
+          </button>
+        </>
+      )}
       {image && <img src={image} alt="" />}
-      <button onClick={reset}>Reset</button>
+      {image && <button onClick={reset}>Reset</button>}
     </div>
   );
 };
