@@ -17,13 +17,13 @@ const WebCam = () => {
   const videoConstraints = {
     width: 220,
     height: 200,
-    facingMode: changeCameraMode ? "user" : "environment",
+    facingMode: changeCameraMode ? "user" : { exact : "environment"}
   };
 
-  // const reset = () => {
-  //   setChangeCameraMode(true);
-  //   setImage("");
-  // };
+  const reset = () => {
+    setChangeCameraMode(true);
+    setImage("");
+  };
 
   return (
     <div>
@@ -43,7 +43,7 @@ const WebCam = () => {
         </>
       )}
       {image && <img src={image} alt="" />}
-      {/* <button onClick={reset}>Reset</button> */}
+      <button onClick={reset}>Reset</button>
     </div>
   );
 };
