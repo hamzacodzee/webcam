@@ -20,10 +20,10 @@ const WebCam = () => {
     facingMode: changeCameraMode ? "user" : "environment",
   };
 
-  const reset = () => {
-    setChangeCameraMode(true);
-    setImage("");
-  };
+  // const reset = () => {
+  //   setChangeCameraMode(true);
+  //   setImage("");
+  // };
 
   return (
     <div>
@@ -43,7 +43,7 @@ const WebCam = () => {
         </>
       )}
       {image && <img src={image} alt="" />}
-      <button onClick={reset}>Reset</button>
+      {/* <button onClick={reset}>Reset</button> */}
     </div>
   );
 };
