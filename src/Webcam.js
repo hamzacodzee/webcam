@@ -17,7 +17,7 @@ const WebCam = () => {
   const videoConstraints = {
     width: 220,
     height: 200,
-    facingMode: changeCameraMode ? "user" : { exact: "environment" }
+    facingMode: changeCameraMode ? "user" : "environment",
   };
 
   const reset = () => {
